@@ -97,12 +97,12 @@ const Navbar = (props) => {
         </ListItem>
 
         <Divider />
-        <ListItem onClick={() => navigate('/addExpense')} key={"Your Expanses"} disablePadding>
+        <ListItem onClick={() => navigate('/addExpense')} key={"Your Expenses"} disablePadding>
           <ListItemButton>
             <ListItemIcon>
               <PriceChangeIcon sx={{ color: "#3b71ca" }} />
             </ListItemIcon>
-            <ListItemText sx={{ color: "#3b71ca" }} primary={"Your Expanses"} />
+            <ListItemText sx={{ color: "#3b71ca" }} primary={"Your Expenses"} />
           </ListItemButton>
         </ListItem>
         <Divider />

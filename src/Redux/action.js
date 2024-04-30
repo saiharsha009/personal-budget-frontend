@@ -112,8 +112,25 @@ export const getBudgets = (navigate) => {
   }
 };
 
-
-export const addBudgetData = (budgetName, totalAmount, catagories, navigate) => {
+export const createCatgory = (name,allocatedAmount,budgetId ) => {
+  const data = {
+    name,
+    allocatedAmount,
+    budgetId
+  }
+  return (dispatch) => {
+    dispatch({ type: CREATE_CATEGORY_PENDING })
+    Axios.post('/budget/createBudgetCategory', data)
+    .then((res) => {
+      dispatch({ type: CREATE_CATEGORY_FULFILLED, payload: res.data });
+      dispatch(getBudgets())
+    })
+    .catch(err => {
+      dispatch({ type: CREATE_CATEGORY_REJECTED, payload: err?.response?.data?.message })
+    })
+  }
+}
+export const addBudgetData = (budgetName, totalAmount, catagories, categoryName) => {
   
   const catagoriesArray = Object.entries(catagories).map(([name, amount]) => ({
     name,
@@ -131,38 +148,21 @@ export const addBudgetData = (budgetName, totalAmount, catagories, navigate) => 
 
   return (dispatch) => {
     dispatch({ type: CREATE_BUDGET_PENDING });
-    Axios.post('/budget/createBudget', data)
+    Axios.post('/budget/createUserBudget', data)
     .then((res) => {
       dispatch({ type: CREATE_BUDGET_FULFILLED, payload: res.data });
+      console.log(res.data)
       dispatch(getBudgets());
+      const { budget: { _id } } = res.data;
+      dispatch(createCatgory(categoryName, totalAmount, _id ))
     })
     .catch(err => {
-      navigate('/signin')
-
       dispatch({ type: CREATE_BUDGET_REJECTED, payload: err?.response?.data?.message });
     })
   }
 }
 
-export const createCatgory = (name,allocatedAmount,budgetId, navigate) => {
-  const data = {
-    name,
-    allocatedAmount,
-    budgetId
-  }
-  return (dispatch) => {
-    dispatch({ type: CREATE_CATEGORY_PENDING })
-    Axios.post('/budget/createBudgetCategory', data)
-    .then((res) => {
-      dispatch({ type: CREATE_CATEGORY_FULFILLED, payload: res.data });
-    })
-    .catch(err => {
-      // navigate('/signin')
 
-      dispatch({ type: CREATE_CATEGORY_REJECTED, payload: err?.response?.data?.message })
-    })
-  }
-}
 
 
 export const getAllExpensesAndDate = (navigate) => {

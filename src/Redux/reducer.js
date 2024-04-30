@@ -185,13 +185,11 @@ const reducer = (state = initialState, action) => {
       }
     }
     case CREATE_BUDGET_FULFILLED: {
-      toast.success(JSON.stringify(action.payload))
       return {
         ...state,
       }
     }
     case CREATE_BUDGET_REJECTED: {
-      toast.error('Could not add Budget!!!');
       return {
         ...state,
       }
@@ -210,7 +208,6 @@ const reducer = (state = initialState, action) => {
     case FETCH_BUDGET_FULFILLED: {
       const budgets = action.payload;
       if (budgets[0]) {
-        console.log('------------', budgets[0])
         let budgetAmount = 0;
         budgets[0]?.categories && budgets[0]?.categories.map(cat => {
           budgetAmount += cat.allocatedAmount;

@@ -107,7 +107,7 @@ const Expanses = (props) => {
             </MDBDropdownMenu>
           </MDBDropdown>}
           {dataForBudget && dataForBudget.length != 0 && catagoryList && catagoryList.length > 0 ? <MDBBtn  onClick={() => setOpenForm(!openForm)} >
-            {openForm ? "VIEW YOUR EXPANSES" : "ADD AN EXPANSE"}</MDBBtn> : <strong style={{
+            {openForm ? "VIEW YOUR EXPENSES" : "ADD AN EXPENSE"}</MDBBtn> : <strong style={{
               fontSize: "30px",
               height: '200px',
               display: 'flex',
@@ -125,7 +125,7 @@ const Expanses = (props) => {
               justifyContent: "center",
               alignItems: "center"
             }}>
-              No Expanses!
+              No Expenses!
             </strong>
             :
             (filterActive ? filterData : expansesData).map((data) => {

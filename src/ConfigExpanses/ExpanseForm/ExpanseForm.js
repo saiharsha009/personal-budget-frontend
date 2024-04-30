@@ -44,15 +44,7 @@ const ExpanseForm = ({ open, setOpen, catagoryList, addExpense, expansesData, })
 
   return (<>
     <div style={{ padding: "30px", borderRadius: "10px", margin: "10px", border: "2px dotted #3b71ca" }}>
-      <strong style={{ display: 'flex', justifyContent: "center", color: "#3b71ca" }}>REGISTER YOUR EXPANSE</strong>
-      <MDBDropdown dropright>
-        <MDBDropdownToggle>{categoryObj?.name?.length ? categoryObj.name : "EXPANSE CATEGORY"}</MDBDropdownToggle>
-        <MDBDropdownMenu wrapperClass='mb-4'>
-          {catagoryList && catagoryList.length > 0 && catagoryList.map((item) => (
-            <MDBDropdownItem onClick={(e) => handleCategorySelection(item)} link>{item.name}</MDBDropdownItem>
-          ))}
-        </MDBDropdownMenu>
-      </MDBDropdown>
+      <strong style={{ display: 'flex', justifyContent: "center", color: "#3b71ca" }}>REGISTER YOUR EXPENSE</strong>
       <br />
       <div className="container mt-1" style={{ width: '100%' }}>
         <div className="row" style={{ width: '100%' }}>
@@ -71,7 +63,15 @@ const ExpanseForm = ({ open, setOpen, catagoryList, addExpense, expansesData, })
         </div>
       </div>
       <MDBInput type='number' value={amountSpent} onChange={(e) => setAmountSpent(e.target.value)} id='form4Example2' wrapperClass='mb-4' label='Amount Spent' />
-      <MDBInput wrapperClass='mb-4' textarea value={description} onChange={(e) => setDescription(e.target.value)} id='form4Example3' rows={4} label='Expanse Description' />
+      <MDBInput wrapperClass='mb-4' textarea value={description} onChange={(e) => setDescription(e.target.value)} id='form4Example3' rows={4} label='Expense Description' />
+      <MDBDropdown dropright>
+        <MDBDropdownToggle>{categoryObj?.name?.length ? categoryObj.name : "EXPENSE CATEGORY"}</MDBDropdownToggle>
+        <MDBDropdownMenu wrapperClass='mb-4'>
+          {catagoryList && catagoryList.length > 0 && catagoryList.map((item) => (
+            <MDBDropdownItem onClick={(e) => handleCategorySelection(item)} link>{item.name}</MDBDropdownItem>
+          ))}
+        </MDBDropdownMenu>
+      </MDBDropdown>
 
       <MDBBtn onClick={() => handleExpanses()} type='submit' className='mb-4' block>
         Submit
