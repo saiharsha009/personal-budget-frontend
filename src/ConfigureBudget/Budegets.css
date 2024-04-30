@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Nova+Square&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* background-image: url(../Images/LoginPage.jpg); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* ========================================= */
+
+.speedDialicon {
+  position: absolute;
+  bottom: 0px;
+  right: 0vh
+}
+
+.fractionContainerAmount {
+  font-size: 40px;
+  font-weight: 500;
+  font-family: "Agbalumo", system-ui;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+
+.fractionContainerAmount {
+  margin: 10px 0;
+}

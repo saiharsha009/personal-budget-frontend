@@ -1,0 +1,82 @@
+.navBarActions {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 20px;
+  align-items: center;
+  color: black;
+}
+
+.routeAction {
+  color: white;
+  cursor: pointer;
+  font-family: "Agbalumo", system-ui;
+  font-weight: 500;
+  /* font-size: 17px; */
+  transition: all 0.1s ease-in-out;
+  padding: 10px;
+}
+
+.routeAction:hover {
+  background-color: #fa8658;
+  color: white;
+  border-bottom: 3px solid white;
+  border-radius: 10px 10px 0 0;
+}
+
+/* =========================================== */
+
+.navMidSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+
+.navbarTitle {
+  font-size: 21px;
+}
+
+.navBarActions {
+  display: flex;
+  width: 50vw;
+  align-items: center;
+  gap: 50px;
+  justify-content: center;
+
+}
+
+.navigationSection> div {
+  font-size: 15px;
+}
+
+.logoutButton {
+  position: absolute !important;
+  right: 20px;
+}
+
+.budgetCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  
+}
+
+@media only screen and (max-width:830px) {
+  .budgetCardsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+  }
+}
+
+@media only screen and (max-width:600px) {
+  .budgetCardsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+}
