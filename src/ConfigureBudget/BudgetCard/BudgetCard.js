@@ -32,7 +32,7 @@ const BudgetCard = (props) => {
         }}>
           <div>
             <div><strong style={{ color: "#3b71ca" }}>Amount: </strong>{allocatedAmount}</div>
-            <div><strong style={{ color: "#3b71ca" }}>Amount Spent: </strong>{spend}</div>
+     
 
           </div>
           <div>
