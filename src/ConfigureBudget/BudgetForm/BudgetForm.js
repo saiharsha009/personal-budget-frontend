@@ -92,8 +92,8 @@ const BudgetForm = (props) => {
       <strong style={{ display: 'flex', justifyContent: "center", color: "#3b71ca", margin: "0 0 15px 0" }}>REGISTER YOUR BUDGET</strong>
       {/* <MDBInput type='text' onChange={(e) => setBudgetName(e.target.value)} value={budgetName} disabled={dataForBudget && dataForBudget.length !=0} id='form4Example2' wrapperClass='mb-4' label='Name your budget' /> */}
       {/* <MDBInput type='number' onChange={(e) => setMonthlyBudget(e.target.value)} value={monthlyBudget} id='form4Example2' wrapperClass='mb-4' disabled={dataForBudget && dataForBudget.length !=0} label='Budget Amount' /> */}
-      <MDBInput type='text' onChange={(e) => setCatagory(e.target.value)} disabled={!dataForBudget || dataForBudget.length === 0} id='form4Example2' wrapperClass='mb-4' label='Name your category' />
-      <MDBInput type='number' onChange={(e) => setCatagoryBudget(e.target.value)} disabled={!dataForBudget || dataForBudget.length === 0} id='form4Example2' wrapperClass='mb-4' label='Set Category Amount' />
+      <MDBInput type='text' onChange={(e) => setCatagory(e.target.value)}  id='form4Example2' wrapperClass='mb-4' label='Name your category' />
+      <MDBInput type='number' onChange={(e) => setCatagoryBudget(e.target.value)}  id='form4Example2' wrapperClass='mb-4' label='Set Category Amount' />
       {/* <MDBBtn onClick={} type='submit' className='mb-4' disabled={!dataForBudget || dataForBudget.length === 0} >
         ADD CATEGORY
       </MDBBtn> */}
