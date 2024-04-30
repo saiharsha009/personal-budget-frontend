@@ -111,7 +111,7 @@ const HomePage = (props) => {
           }),
         },
         title: {
-          text: "Recipe",
+          text: "",
         },
       },
     ],
