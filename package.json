@@ -60,5 +60,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@applitools/eyes-cypress": "^3.44.1",
+    "@applitools/eyes-storybook": "^3.50.2",
+    "cypress": "^13.8.1",
+    "jest": "^27.5.1"
   }
 }
